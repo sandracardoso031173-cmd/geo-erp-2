@@ -1,0 +1,49 @@
+# Credenciais e configurações locais
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Backups
+backup/
+*backup*.py
+*BACKUP*.py
+anterior projetos.py
+
+# Arquivos temporários e locais
+temp/
+uploads/
+documentos/
+
+# Bancos locais
+*.db
+*.sqlite
+*.sqlite3
+
+# Ambiente virtual
+venv/
+.venv/
+env/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de teste
+testar_r2.py
+
+# Migração e manutenção
+migrar_supabase.py
+migrar_documentos_storage.py
+importar_dados.py
+importacao/
+database/
+
+# Inicialização local Windows
+INICIAR_GEO_ERP.bat
+
+app backutp2.py
