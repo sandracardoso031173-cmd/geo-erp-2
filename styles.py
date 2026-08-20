@@ -4,20 +4,24 @@ def aplicar_estilo():
     st.markdown("""
 <style>
 
-/* Quebra o bloqueio de centralização nativo do Streamlit */
+/* Quebra o bloqueio de flexbox do Streamlit (Modo Sênior) */
         div[data-testid="stButton"] button {
-            justify-content: flex-start !important;
-            text-align: left !important;
-            padding-left: 15px !important;
-        }
-        div[data-testid="stButton"] button div[data-testid="stMarkdownContainer"] {
-            width: 100% !important;
             display: flex !important;
             justify-content: flex-start !important;
+            padding-left: 20px !important;
+            width: 100% !important;
         }
+        
+        div[data-testid="stButton"] button div[data-testid="stMarkdownContainer"] {
+            display: flex !important;
+            justify-content: flex-start !important;
+            width: 100% !important;
+        }
+        
         div[data-testid="stButton"] button p {
+            margin-left: 0 !important;
+            margin-right: auto !important; /* A mágica acontece aqui: empurra o texto pra esquerda */
             text-align: left !important;
-            margin: 0 !important;
         }
         
 /* APP */
