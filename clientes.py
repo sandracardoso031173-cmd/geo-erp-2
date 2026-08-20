@@ -6,7 +6,7 @@ from database import conectar
 from utils import cabecalho_pagina, ETAPAS_TAREFAS_PADRAO
 
 
-t.markdown('''
+st.markdown('''
     <style>
         /* Alinha os textos e botões para a esquerda, forçando múltiplas linhas */
         div[data-testid="metric-container"] {
