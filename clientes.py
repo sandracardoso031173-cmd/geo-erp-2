@@ -5,26 +5,6 @@ import streamlit as st
 from database import conectar
 from utils import cabecalho_pagina, ETAPAS_TAREFAS_PADRAO
 
-st.markdown('''
-    <style>
-        /* Alinhamento definitivo forçando todas as camadas do botão */
-        div.stButton > button {
-            justify-content: flex-start !important; 
-            padding-left: 15px !important; 
-        }
-        div.stButton > button div[data-testid="stMarkdownContainer"] {
-            width: 100% !important;
-            justify-content: flex-start !important;
-            display: flex !important;
-        }
-        div.stButton > button p, 
-        div.stButton > button span, 
-        div.stButton > button div {
-            text-align: left !important;
-        }
-    </style>
-''', unsafe_allow_html=True)
-
 def listar_clientes():
     with conectar() as conn:
         return pd.read_sql_query(
