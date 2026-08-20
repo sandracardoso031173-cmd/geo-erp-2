@@ -270,29 +270,18 @@ def tela_clientes():
         st.info("Nenhum cliente cadastrado.")
         return
 
-    # CSS somente para os botões da listagem de propostas:
-    # alinhados à esquerda e em negrito.
-    st.markdown(
-        """
-        <style>
-        div[data-testid="stButton"]:has(button[kind="secondary"]) > button {
-            text-align: left !important;
-        }
-        div[data-testid="stButton"] > button {
-            justify-content: flex-start !important;
-        }
-        div[data-testid="stButton"] > button > div,
-        div[data-testid="stButton"] > button p {
+   st.markdown('''
+    <style>
+        div[data-testid="metric-container"] { text-align: left !important; }
+        div.stButton > button {
             width: 100% !important;
-            text-align: left !important;
+            justify-content: flex-start !important; 
+            padding-left: 15px !important; 
         }
-        div[data-testid="stButton"] > button p {
-            font-weight: 700 !important;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+        div.stButton > button * { text-align: left !important; }
+        div[data-testid="stMarkdownContainer"] p { text-align: left !important; }
+    </style>
+''', unsafe_allow_html=True)
 
     proposta_aberta_id = st.session_state.get("proposta_aberta_id")
 
