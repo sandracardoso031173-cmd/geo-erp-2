@@ -5,7 +5,6 @@ import streamlit as st
 from database import conectar
 from utils import cabecalho_pagina, ETAPAS_TAREFAS_PADRAO
 
-
 st.markdown('''
     <style>
         /* Alinha os textos e botões para a esquerda, forçando múltiplas linhas */
@@ -269,20 +268,7 @@ def tela_clientes():
     if clientes.empty:
         st.info("Nenhum cliente cadastrado.")
         return
-
-   st.markdown('''
-    <style>
-        div[data-testid="metric-container"] { text-align: left !important; }
-        div.stButton > button {
-            width: 100% !important;
-            justify-content: flex-start !important; 
-            padding-left: 15px !important; 
-        }
-        div.stButton > button * { text-align: left !important; }
-        div[data-testid="stMarkdownContainer"] p { text-align: left !important; }
-    </style>
-''', unsafe_allow_html=True)
-
+    
     proposta_aberta_id = st.session_state.get("proposta_aberta_id")
 
     # ---------------------------------------------------------
