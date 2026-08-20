@@ -5,6 +5,23 @@ import streamlit as st
 from database import conectar
 from utils import cabecalho_pagina, ETAPAS_TAREFAS_PADRAO
 
+st.markdown('''
+    <style>
+        /* Alinha os textos e botões para a esquerda */
+        div[data-testid="metric-container"] {
+            text-align: left !important;
+        }
+        div.stButton > button {
+            text-align: left !important;
+            width: 100% !important;
+        }
+        div[data-testid="stMarkdownContainer"] p {
+            text-align: left !important;
+        }
+    </style>
+''', unsafe_allow_html=True)
+
+
 def listar_clientes():
     with conectar() as conn:
         return pd.read_sql_query(
