@@ -22,6 +22,7 @@ st.markdown('''
     </style>
 ''', unsafe_allow_html=True)
 
+
 STATUS_VISUAL = {
     "Concluído": "🟢 Concluído",
     "Pendente": "🟡 Pendente",
