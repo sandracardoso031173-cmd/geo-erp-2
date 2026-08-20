@@ -4,6 +4,22 @@ def aplicar_estilo():
     st.markdown("""
 <style>
 
+/* Quebra o bloqueio de centralização nativo do Streamlit */
+        div[data-testid="stButton"] button {
+            justify-content: flex-start !important;
+            text-align: left !important;
+            padding-left: 15px !important;
+        }
+        div[data-testid="stButton"] button div[data-testid="stMarkdownContainer"] {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: flex-start !important;
+        }
+        div[data-testid="stButton"] button p {
+            text-align: left !important;
+            margin: 0 !important;
+        }
+        
 /* APP */
 .stApp{
     background:#f4f6f9;
