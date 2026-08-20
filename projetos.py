@@ -366,28 +366,7 @@ def mostrar_ultimos_projetos(projetos: pd.DataFrame):
     dados_lista["_ano"] = pd.to_numeric(partes[0], errors="coerce")
     dados_lista["_numero"] = pd.to_numeric(partes[1], errors="coerce")
     dados_lista = dados_lista.sort_values(["_ano","_numero","Número"], ascending=[False,False,False], na_position="last")
-    st.markdown(
-        """
-        <style>
-        div.stButton > button {
-            justify-content: flex-start !important;
-            text-align: left !important;
-            font-weight: 700 !important;
-        }
-        div.stButton > button > div,
-        div.stButton > button > div[data-testid="stMarkdownContainer"],
-        div.stButton > button [data-testid="stMarkdownContainer"],
-        div.stButton > button p {
-            width: 100% !important;
-            justify-content: flex-start !important;
-            text-align: left !important;
-            font-weight: 700 !important;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
+   
     for _, p in dados_lista.iterrows():
         texto = f'{p["Número"]} | {p["Cliente"]}'
         if st.button(texto, key=f"projeto_lista_{int(p['id'])}", width="stretch"):
