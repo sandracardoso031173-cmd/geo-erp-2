@@ -7,24 +7,23 @@ from utils import cabecalho_pagina, ETAPAS_TAREFAS_PADRAO
 
 st.markdown('''
     <style>
-        /* Alinha os textos e botões para a esquerda, forçando múltiplas linhas */
-        div[data-testid="metric-container"] {
-            text-align: left !important;
-        }
+        /* Alinhamento definitivo forçando todas as camadas do botão */
         div.stButton > button {
+            justify-content: flex-start !important; 
+            padding-left: 15px !important; 
+        }
+        div.stButton > button div[data-testid="stMarkdownContainer"] {
             width: 100% !important;
-            justify-content: flex-start !important; /* Força o alinhamento flexível */
-            padding-left: 15px !important; /* Dá um leve respiro na margem */
+            justify-content: flex-start !important;
+            display: flex !important;
         }
-        div.stButton > button * {
-            text-align: left !important; /* Garante que todas as linhas de texto fiquem à esquerda */
-        }
-        div[data-testid="stMarkdownContainer"] p {
+        div.stButton > button p, 
+        div.stButton > button span, 
+        div.stButton > button div {
             text-align: left !important;
         }
     </style>
 ''', unsafe_allow_html=True)
-
 
 def listar_clientes():
     with conectar() as conn:
